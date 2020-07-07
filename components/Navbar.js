@@ -4,9 +4,9 @@ import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
 const Gonavbar = (props) => {
      return(
          <>
-<Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+<Navbar  sticky="top" collapseOnSelect expand="lg" bg="light" >
   <Navbar.Brand href="#home">
-    <img width='200' src='/logo.png'></img>
+    <img width='200' height='100' src='/logo.png'></img>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">

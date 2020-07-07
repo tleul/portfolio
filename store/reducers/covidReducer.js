@@ -10,7 +10,7 @@ export default (state= initialState,{type, payload}) =>{
 
     switch(type){
         case GET_COVID_DATA:
-            console.log('coing')
+          
             return{
                    ...state,
                    data: payload,
