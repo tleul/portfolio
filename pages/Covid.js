@@ -10,7 +10,21 @@ import covidReducer from "../store/reducers/covidReducer";
 import PropTypes from 'prop-types'
 import MenuDisplay from '../components/Menu'
 import CovidTbleTwo from '../components/CovidTbleTwo'
-const Covid = () =>{
+import Spinner from '../components/Spinner'
+
+const Display = () => {
+    
+   return (
+    <>
+<MenuDisplay />
+<CovidTbleTwo />
+    </>
+)}
+
+const Covid = ({loading, getCovidData }) =>{
+    useEffect (()=>{
+getCovidData()
+    },[])
 
 return (
     <>
@@ -18,22 +32,12 @@ return (
          <Navbar />
          <br/>
          <br/>
-         <Container >
-        <MenuDisplay />
-        <br/>
-        <CovidTbleTwo />
-        
+         <Container>
+        {!loading ? <Spinner /> : <> <Display/> </>}
+
         </Container>
 
-        
-         
-    
-         <CharBar />
-   
-      
-      
-         
-         
+\
     </Wrapper>
    
     </>
@@ -41,5 +45,13 @@ return (
 
 }
 
+Covid.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    getCovidData: PropTypes.func.isRequired,
+}
 
-export default Covid;
+const mapStateToProps = (state) =>({
+loading : state.covid.loading
+})
+
+export default connect(mapStateToProps, {getCovidData})(Covid);

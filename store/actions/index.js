@@ -23,8 +23,21 @@ export const getCovidData = () => async (dispatch) => {
  
 }
 
-export const processData = () => dispatch => {
+export const processData = (country) => async dispatch => {
 
-console.log('processData')
+    
+    const config ={
+      headers:{
+        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+        "x-rapidapi-key": "2926cb8831msh5b23fd7bdae7f5ap13fdcejsn2c5175c5b760",
+        "useQueryString": true,
+        "Content-Type": "application/json"
+      }
+    }
+    const res = await axios.get(`https://covid-193.p.rapidapi.com/history?country=${country}`, config)
+    
+    console.log(res.data.response.slice(0,5))
+  
+
 
 }

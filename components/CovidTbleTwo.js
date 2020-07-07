@@ -17,7 +17,7 @@ import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import {connect} from 'react-redux'
-import {getCovidData} from '../store/actions/index'
+import {getCovidData, processData} from '../store/actions/index'
 import Covid from '../pages/Covid';
 
 
@@ -56,7 +56,7 @@ function createData(name, calories, fat, carbs, protein, price) {
 
 function Row(props) {
 
-  const { row } = props;
+  const { row, processData } = props;
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
   const classesPage = useStyles();
@@ -65,7 +65,7 @@ function Row(props) {
        
       <TableRow className={classes.root}>
         <TableCell>
-                        <IconButton aria-label="expand row" size="small" onClick={() => console.log(row.country)}>
+                        <IconButton aria-label="expand row" size="small" onClick={() => processData(row.country)}>
                             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                         </IconButton>
                         </TableCell>
@@ -156,7 +156,8 @@ const rows = [
 
 const  CollapsibleTable = ({
     covidData
-    , getCovidData
+    , getCovidData,
+    processData
 }) => {
     useEffect(()=>{
         getCovidData()
@@ -191,7 +192,7 @@ const handleChangeRowsPerPage = (event) => {
         </TableHead>
         <TableBody>
           {covidData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-            <Row key={uuidv4()} row={row} />
+            <Row key={uuidv4()} processData={processData} row={row} />
           ))}
         </TableBody>
       </Table>
@@ -211,10 +212,11 @@ const handleChangeRowsPerPage = (event) => {
 CollapsibleTable.propTypes = {
     getCovidData: PropTypes.func.isRequired,
     covidData: PropTypes.array,
+    processData: PropTypes.func.isRequired,
 
 }
 const mapStateToProps = (state) =>({
     covidData : state.covid.data
 
 })
-export default connect(mapStateToProps, {getCovidData}) (CollapsibleTable);
+export default connect(mapStateToProps, {getCovidData, processData}) (CollapsibleTable);
