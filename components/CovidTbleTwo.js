@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
+
+
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -19,7 +21,7 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import {connect} from 'react-redux'
 import {getCovidData, processData} from '../store/actions/index'
 import Covid from '../pages/Covid';
-
+import ChartBar from '../components/chartOne/ChartBar'
 
 
 const useRowStyles = makeStyles({
@@ -55,17 +57,38 @@ function createData(name, calories, fat, carbs, protein, price) {
 
 
 function Row(props) {
+ 
 
-  const { row, processData } = props;
+  const { row, processData, loading } = props;
   const [open, setOpen] = React.useState(false);
+  
   const classes = useRowStyles();
   const classesPage = useStyles();
+ 
+  const handleArrow = (data) =>{
+   
+    setOpen(!open)
+    
+    processData(data)
+   
+  } 
+  
+  const Gitchart = () => {
+    return (
+      <>
+  <div style={{height: 200}}>
+  <ChartBar  />
+  </div>
+      </>
+    )
+    }
+
   return (
     <React.Fragment>
        
       <TableRow className={classes.root}>
         <TableCell>
-                        <IconButton aria-label="expand row" size="small" onClick={() => processData(row.country)}>
+                        <IconButton aria-label="expand row" size="small" onClick={() => handleArrow(row.country)}>
                             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                         </IconButton>
                         </TableCell>
@@ -87,41 +110,21 @@ function Row(props) {
                       </TableCell>
         
       </TableRow>
-      <TableRow>
+  
+    <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={open} timeout={{appear:2000, enter: 1000, exit: 2000}} unmountOnExit>
             <Box margin={1}>
               <Typography variant="h6" gutterBottom component="div">
-                Data by Date/ one week data analyzed 
+                Calander chart Total Death {row.country}
+                
               </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Cases</TableCell>
-                    <TableCell align="right">NewCases</TableCell>
-                    <TableCell align="right">Tested</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {/* {row.history.map((historyRow) => (
-                    <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        {historyRow.date}
-                      </TableCell>
-                      <TableCell>{historyRow.customerId}</TableCell>
-                      <TableCell align="right">{historyRow.amount}</TableCell>
-                      <TableCell align="right">
-                        {Math.round(historyRow.amount * row.price * 100) / 100}
-                      </TableCell>
-                    </TableRow>
-                  ))} */}
-                </TableBody>
-              </Table>
+   <Gitchart />
+  
             </Box>
           </Collapse>
         </TableCell>
-      </TableRow>
+      </TableRow> 
      
    
     </React.Fragment>
@@ -155,14 +158,16 @@ const rows = [
 ];
 
 const  CollapsibleTable = ({
+  loading,
     covidData
     , getCovidData,
-    processData
+    processData,
+   
 }) => {
     useEffect(()=>{
         getCovidData()
     },[])
-    console.log(covidData)
+    
     
     const [page, setPage] = React.useState(0);
 const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -192,7 +197,7 @@ const handleChangeRowsPerPage = (event) => {
         </TableHead>
         <TableBody>
           {covidData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-            <Row key={uuidv4()} processData={processData} row={row} />
+            <Row key={uuidv4()} processData={processData} loading={loading} row={row} />
           ))}
         </TableBody>
       </Table>
@@ -213,10 +218,16 @@ CollapsibleTable.propTypes = {
     getCovidData: PropTypes.func.isRequired,
     covidData: PropTypes.array,
     processData: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
+
 
 }
 const mapStateToProps = (state) =>({
-    covidData : state.covid.data
+    covidData : state.covid.data,
+  
+    loading : state.deathByDay.loading
+
+ 
 
 })
 export default connect(mapStateToProps, {getCovidData, processData}) (CollapsibleTable);
