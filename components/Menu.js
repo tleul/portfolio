@@ -19,7 +19,7 @@ const MenuDisplay = () => {
   return (
     <div>
       <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
-        Menu
+        Filter
       </Button>
       <Menu
         id="fade-menu"
@@ -29,9 +29,11 @@ const MenuDisplay = () => {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        
+        <MenuItem onClick={handleClose}>New Death</MenuItem>
+        <MenuItem onClick={handleClose}>Total Case</MenuItem>
+        <MenuItem onClick={handleClose}>Total Deaths</MenuItem>
+        <MenuItem onClick={handleClose}>New Deaths</MenuItem>
       </Menu>
     </div>
   );

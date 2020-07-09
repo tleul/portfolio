@@ -6,8 +6,7 @@ import Typist from 'react-typist';
 import { Container } from '@material-ui/core';
 import {connect} from 'react-redux'
 import { getCovidData, processData } from "../store/actions";
-import CharBar from "../components/chartOne/ChartBar";
-import covidReducer from "../store/reducers/covidReducer";
+
 import PropTypes from 'prop-types'
 import MenuDisplay from '../components/Menu'
 import CovidTbleTwo from '../components/CovidTbleTwo'
@@ -24,8 +23,12 @@ const Display = () => {
 )}
 
 const Covid = ({loading, getCovidData }) =>{
+    setInterval(()=>{
+        
+        getCovidData()
+    },30000)
     useEffect (()=>{
-getCovidData()
+        getCovidData()
     },[])
 
 return (
@@ -54,6 +57,7 @@ return (
              </p> 
               </Typist>
             
+        
            
              </div>
         {!loading ? <Spinner /> : <> <Display/> </>}
