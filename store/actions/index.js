@@ -23,6 +23,7 @@ export const getCovidData = () => async (dispatch) => {
 
 
     dispatch({type: GET_COVID_DATA, payload: totalCases})
+    
   } catch (error) {
     console.log(error)
   }
