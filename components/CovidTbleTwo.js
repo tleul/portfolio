@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
-
+import { Fade, Loop } from 'react-animation-components'
 
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,7 +20,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import {connect} from 'react-redux'
 import {getCovidData, processData} from '../store/actions/index'
-import Covid from '../pages/Covid';
+
 import ChartBar from '../components/chartOne/ChartBar'
 
 
@@ -31,6 +31,7 @@ const useRowStyles = makeStyles({
     },
   },
 });
+
 const useStyles = makeStyles({
     root: {
       width: '100%',
@@ -40,20 +41,6 @@ const useStyles = makeStyles({
     },
   });
 
-function createData(name, calories, fat, carbs, protein, price) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
-      { date: '2020-01-05', customerId: '11091700', amount: 3 },
-      { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-    ],
-  };
-}
 
 
 function Row(props) {
@@ -97,13 +84,18 @@ function Row(props) {
                         </TableCell>
         
                       <TableCell align={'right'}>
-                      {!row.cases.new ? 'NP or 0'  : row.cases.new }
+                     <span className='flash' style={!row.cases.new ?  {color: 'black'} : {color: 'red'}}>
+                          
+                           
+                            {!row.cases.new ? 'NP or 0'  : row.cases.new }
+                         
+                       </span> 
                       </TableCell>
                       <TableCell  align={'right'}>
                       {!row.cases.total ? 'NP or 0'  : row.cases.total }
                       </TableCell>
                       <TableCell align={'right'}>
-                      {!row.deaths.new ? 'NP or 0'  : row.deaths.new }
+                     <span className='flash' style={!row.cases.new ?  {color: 'black'} : {color: 'red'}}>{!row.deaths.new ? 'NP or 0'  : row.deaths.new }</span> 
                       </TableCell>
                       <TableCell  align={'right'}>
                       {!row.deaths.total ? 'NP or 0'  : row.deaths.total }
@@ -113,7 +105,7 @@ function Row(props) {
   
     <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout={{appear:2000, enter: 1000, exit: 2000}} unmountOnExit>
+          <Collapse in={open} timeout={{appear:500, enter: 500, exit: 500}} unmountOnExit>
             <Box margin={1}>
               <Typography variant="h6" gutterBottom component="div">
                 Calander chart Total Death {row.country}
@@ -149,13 +141,7 @@ Row.propTypes = {
   }).isRequired,
 };
 
-const rows = [
-  createData('Frozen yoghurt', 'Frozen yoghurt', 6.0, 24, 4.0, 3.99),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-  createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-  createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-  createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-];
+
 
 const  CollapsibleTable = ({
   loading,

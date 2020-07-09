@@ -2,7 +2,7 @@ import React,{useEffect} from 'react'
 
 import Navbar from "./Navbar"
 import Wrapper from "../components/Wrapper";
-
+import Typist from 'react-typist';
 import { Container } from '@material-ui/core';
 import {connect} from 'react-redux'
 import { getCovidData, processData } from "../store/actions";
@@ -35,8 +35,28 @@ return (
          <br/>
          <br/>
          <Container>
+             <div style={{textAlign: 'center'}}>
+             <Typist>
+             <h6 className='toptitle'>Covid19 woldwide Real-Time Stastics</h6>
+              <Typist.Delay ms={1250} />
+              <h6 className='toptitle'>Explore each data into actionable insights with different visualization</h6>
+              <Typist.Delay ms={1250} />
+              <h5 className='toptitle'> It is designed/developed to show to the world how the virus is spreading</h5>  
+              <Typist.Delay ms={500} />  
+            <p className='caution'>Please  <Typist.Delay ms={500} /> wear mask 
+              <Typist.Backspace count={10} delay={1000} /> 
+              <Typist.Delay ms={750} />
+              wash your hands
+              <Typist.Backspace count={15} delay={1000} /> 
+              <Typist.Delay ms={750} />
+              maintain 6 feet away from each other
+              <Typist.Delay ms={1250} />
+             </p> 
+              </Typist>
+            
+           
+             </div>
         {!loading ? <Spinner /> : <> <Display/> </>}
-
         </Container>
 
 \

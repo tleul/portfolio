@@ -1,0 +1,22 @@
+.flash {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+  animation-name: blinker;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+@keyframes blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.caution {
+  color: darkcyan; }
+
+.toptitle {
+  color: coral; }

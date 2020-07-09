@@ -14,9 +14,15 @@ export const getCovidData = () => async (dispatch) => {
       }
     }
     const res = await axios.get("https://covid-193.p.rapidapi.com/statistics", config)
-    
-    
-    dispatch({type: GET_COVID_DATA, payload: res.data.response})
+         
+ 
+
+  const totalCases =   res.data.response.sort(function(a, b) {
+   return b.cases.total - a.cases.total;
+});
+
+
+    dispatch({type: GET_COVID_DATA, payload: totalCases})
   } catch (error) {
     console.log(error)
   }
