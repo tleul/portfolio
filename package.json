@@ -19,6 +19,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "formidable-serverless": "^1.0.3",
+    "framer-motion": "^1.11.1",
     "moment": "^2.27.0",
     "next": "^9.4.4",
     "react": "^16.9.0",

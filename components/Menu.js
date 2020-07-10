@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
+import Autocomp from '../components/Autocomplete'
+import { connect } from 'react-redux';
 // import Autocomp from '../components/Autocomplete'
 
 const MenuDisplay = () => {
@@ -22,6 +24,8 @@ const MenuDisplay = () => {
       <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
         Filter
       </Button>
+      <Autocomp/>
+      
       <Menu
         id="fade-menu"
         anchorEl={anchorEl}
@@ -41,4 +45,4 @@ const MenuDisplay = () => {
   );
 }
 
-export default MenuDisplay;
+export default  MenuDisplay;

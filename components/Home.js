@@ -1,5 +1,5 @@
 
-
+import Example from './Titlehome'
 
 
 
@@ -14,6 +14,10 @@ const Home = () => {
         <br/>
          I am   Fullstack software Developer!
         </h3> 
+        <div className='shuffle'>
+          <Example/>
+        </div>
+        
       </div>
      
   )
