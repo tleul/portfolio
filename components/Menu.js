@@ -30,7 +30,7 @@ const MenuDisplay = () => {
         TransitionComponent={Fade}
       >
         
-        <MenuItem onClick={handleClose}>New Death</MenuItem>
+        <MenuItem onClick={handleClose}>New Cases</MenuItem>
         <MenuItem onClick={handleClose}>Total Case</MenuItem>
         <MenuItem onClick={handleClose}>Total Deaths</MenuItem>
         <MenuItem onClick={handleClose}>New Deaths</MenuItem>
