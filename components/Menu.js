@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
+// import Autocomp from '../components/Autocomplete'
 
 const MenuDisplay = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -35,6 +36,7 @@ const MenuDisplay = () => {
         <MenuItem onClick={handleClose}>Total Deaths</MenuItem>
         <MenuItem onClick={handleClose}>New Deaths</MenuItem>
       </Menu>
+ 
     </div>
   );
 }
