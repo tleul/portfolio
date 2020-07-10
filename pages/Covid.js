@@ -12,7 +12,8 @@ import MenuDisplay from '../components/Menu'
 import CovidTbleTwo from '../components/CovidTbleTwo'
 import Spinner from '../components/Spinner'
 import { Router } from 'next/router';
-
+import Lottie from "react-lottie";
+import * as legoData from "../components/LoadingAnimations/homeLoading.json";
 const Display = () => {
     
    return (
@@ -21,7 +22,14 @@ const Display = () => {
 <CovidTbleTwo />
     </>
 )}
-
+const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: legoData.default,
+    rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice"
+    }
+    }
 const Covid = ({loading, getCovidData }) =>{
     setInterval(()=>{
         
@@ -60,7 +68,7 @@ return (
         
            
              </div>
-        {!loading ? <Spinner /> : <> <Display/> </>}
+        {!loading ? <Lottie options={defaultOptions} height={120} width={120} />  : <> <Display/> </>}
         </Container>
 
 \

@@ -6,7 +6,7 @@ const Wrapper = ({ children }) => {
   return (
     <Fragment>
       <Head>
-        <title>Nextjs Uploader</title>
+        <title>Leul T</title>
         <link
           rel="stylesheet"
           href="https://bootswatch.com/4/cerulean/bootstrap.min.css"
