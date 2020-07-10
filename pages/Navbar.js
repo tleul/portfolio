@@ -12,7 +12,7 @@ const Gonavbar = (props) => {
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="/Titlehome">Features</Nav.Link>
       <Nav.Link onClick={()=> Router.push('/Covid', '/index' , {shallow: true})}> Covid  </Nav.Link>
       <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

@@ -1,56 +1,41 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles({
-  root: {
-  width:300,
- 
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+import * as React from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { shuffle } from "lodash";
 
-export default function Titlehome() {
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+const spring = {
+  type: "spring",
+  damping: 20,
+  stiffness: 300
+};
+
+const Example = () => {
+  const [colors, setColors] = useState(initialColors);
+  const skillsImg =[]
+  useEffect(() => {
+    setTimeout(() => setColors(shuffle(colors)), 2000);
+  }, [colors]);
 
   return (
-      
-    <Card  className={classes.root}>
-      <CardContent>
-
-         <p style={{color:'white'}}>Word of the Day</p> 
-      
-        <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography variant="body2" component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    
+  <div className='skill-img'>
+        <ul >
+      {colors.map(background => (
+        <motion.img
+          key={background}
+          layoutTransition={spring}
+          style={{ background }}
+        src={background}
+        />
+      ))}
+    </ul>
+  </div>
+   
+   
+   
   );
-}
+};
+
+const initialColors = ["./skills/js.svg","./skills/nodejs.svg", "./skills/react.svg","./skills/mongodb.jpeg"];
+
+export default Example
