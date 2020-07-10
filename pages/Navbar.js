@@ -5,7 +5,7 @@ import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
 const Gonavbar = (props) => {
      return(
          <>
-<Navbar  sticky="top" collapseOnSelect expand="lg" bg="light" >
+<Navbar className='nav'  sticky='top' collapseOnSelect expand="lg" bg="none" >
   <Navbar.Brand  onClick={()=> Router.push('/', '/')}>
     <img width='200' height='100' src='/logo.png'></img>
   </Navbar.Brand>

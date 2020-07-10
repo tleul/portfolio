@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 
 import Navbar from "./Navbar"
 import Wrapper from "../components/Wrapper";
@@ -31,6 +31,7 @@ const defaultOptions = {
     }
     }
 const Covid = ({loading, getCovidData }) =>{
+    const [open, setopen] = useState(false)
     setInterval(()=>{
         
         getCovidData()
@@ -42,13 +43,17 @@ const Covid = ({loading, getCovidData }) =>{
 return (
     <>
     <Wrapper>
-        <Navbar/>
+      
+            
+             <Navbar />
+      
+       
          <br/>
          <br/>
          <Container>
              <div style={{textAlign: 'center'}}>
              <Typist>
-             <h6 className='toptitle'>Covid19 woldwide Real-Time Stastics</h6>
+             <h6 className='toptitle'>Covid19 worldwide Real-Time Stastics</h6>
               <Typist.Delay ms={1250} />
               <h6 className='toptitle'>Explore each data into actionable insights with different visualization</h6>
               <Typist.Delay ms={1250} />
