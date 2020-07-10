@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
 import { Fade, Loop } from 'react-animation-components'
-
+import Autocomp from '../components/Autocomplete'
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -74,7 +74,7 @@ function Row(props) {
     <React.Fragment>
        
       <TableRow className={classes.root}>
-        <TableCell>
+          <TableCell>
                         <IconButton aria-label="expand row" size="small" onClick={() => handleArrow(row.country)}>
                             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                         </IconButton>
@@ -156,7 +156,8 @@ const handleChangeRowsPerPage = (event) => {
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
-            <TableCell />
+            <TableCell><Autocomp data={covidData}/></TableCell>
+            
             <TableCell>Country</TableCell>
             <TableCell align="right">New Cases</TableCell>
             <TableCell align="right">Total Cases</TableCell>
