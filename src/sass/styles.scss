@@ -86,6 +86,26 @@ padding-left: 15rem;
 }
 
 }
+.autocomplete-box{
+    display:flex;
+   flex-direction: row;
+   img:hover{
+       opacity: 0.5;
+   }
+   img{
+       height: 50px
+   }
+   .autocomplete-search{
+       padding-top: 1rem;
+       border: none
+   }
+   .autocomplete-search button {
+    background: none;
+    border: none;
+    
+   }
+}
+
 // @media only screen and (max-width: 480px) {
 //     /* your CSS here */
 //     }
