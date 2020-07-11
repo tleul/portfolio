@@ -71,3 +71,17 @@ ul {
   @media only screen and (max-width: 700px) {
     .shuffle {
       padding-left: 1rem; } }
+
+.autocomplete-box {
+  display: flex;
+  flex-direction: row; }
+  .autocomplete-box img:hover {
+    opacity: 0.5; }
+  .autocomplete-box img {
+    height: 50px; }
+  .autocomplete-box .autocomplete-search {
+    padding-top: 1rem;
+    border: none; }
+  .autocomplete-box .autocomplete-search button {
+    background: none;
+    border: none; }

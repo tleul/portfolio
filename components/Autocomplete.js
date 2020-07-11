@@ -4,9 +4,11 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import data from '../public/countries'
 
-export default function Autocomp() {
+const  Autocomp = () => {
   return (
-    <div style={{ width: 200, }}>
+    <>
+    <div className='autocomplete-box'>
+         <div style={{ width: 200, }}>
       <Autocomplete
      
         freeSolo
@@ -17,5 +19,13 @@ export default function Autocomp() {
       />
     
     </div>
+    <div className='autocomplete-search'>
+    <button ><img src='./search.svg' /></button>
+    </div>
+    </div>
+ 
+    </>
   );
 }
+
+export default Autocomp;

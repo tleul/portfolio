@@ -10,9 +10,9 @@ const spring = {
   stiffness: 300
 };
 
-const Example = () => {
+const SkillShuffler = () => {
   const [colors, setColors] = useState(initialColors);
-  const skillsImg =[]
+
   useEffect(() => {
     setTimeout(() => setColors(shuffle(colors)), 2000);
   }, [colors]);
@@ -36,6 +36,6 @@ const Example = () => {
   );
 };
 
-const initialColors = ["./skills/js.svg","./skills/nodejs.svg", "./skills/react.svg","./skills/mongodb.jpeg"];
+const initialColors = ["./skills/js.svg","./skills/nodejs.svg", "./skills/react.svg","./skills/mongodb.png"];
 
-export default Example
+export default SkillShuffler

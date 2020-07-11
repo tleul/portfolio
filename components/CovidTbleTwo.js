@@ -2,6 +2,12 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
 import { Fade, Loop } from 'react-animation-components'
+//filter tabel 
+
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import data from '../public/countries'
+// 
 
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,6 +40,7 @@ const useRowStyles = makeStyles({
 
 const useStyles = makeStyles({
     root: {
+  
       width: '100%',
     },
     container: {
@@ -136,7 +143,10 @@ const  CollapsibleTable = ({
     useEffect(()=>{
         getCovidData()
     },[])
-    
+  
+    const [filter, setfilter] = useState(covidData)
+
+  
     
     const [page, setPage] = React.useState(0);
 const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -149,9 +159,37 @@ const handleChangeRowsPerPage = (event) => {
   setRowsPerPage(+event.target.value);
   setPage(0);
 };
-    
+const handelFilter = (filterData) =>{
+if(filterData.length > 1){
+ const filtered = covidData.filter((item)=>{
+    return item.country.toLowerCase().includes(filterData.toLowerCase());
+   })
+   setfilter(filtered)
+}else{
+ setfilter(covidData)
+}
+ 
+  
+}
+
   return (
     <>
+     <div className='autocomplete-box'>
+         <div style={{ width: 200, }}>
+      <Autocomplete
+        freeSolo
+        options={data.map((item) => item)}
+        renderInput={(params) => (
+          <TextField {...params}  label="Look up Country" margin="normal" onChange={()=>handelFilter(params.inputProps.value)} onKeyPress={()=> handelFilter(params.inputProps.value)}  variant="outlined" />
+        )}
+      />
+    
+    </div>
+    <div className='autocomplete-search'>
+    <button ><img src='./search.svg' /></button>
+    </div>
+    </div>
+ 
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
@@ -165,9 +203,10 @@ const handleChangeRowsPerPage = (event) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {covidData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+          {filter.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
             <Row key={uuidv4()} processData={processData} loading={loading} row={row} />
           ))}
+         
         </TableBody>
       </Table>
     </TableContainer>

@@ -1,5 +1,5 @@
 
-import Example from './Titlehome'
+import SkillShuffler from './Titlehome'
 
 
 
@@ -15,7 +15,7 @@ const Home = () => {
          I am   Fullstack software Developer!
         </h3> 
         <div className='shuffle'>
-          <Example/>
+          <SkillShuffler/>
         </div>
         
       </div>
