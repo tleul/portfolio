@@ -17,6 +17,14 @@
   100% {
     opacity: 1; } }
 
+.nav-bar p {
+  color: white;
+  font-weight: bold; }
+
+.nav-projects p {
+  color: #cc5577;
+  font-weight: bold; }
+
 .main-container {
   display: flex;
   flex-direction: row; }
@@ -29,13 +37,14 @@
 
 .protoflio-home {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  text-align: center; }
   .protoflio-home h3 {
     color: white;
     font-family: 'Open Sans Condensed', sans-serif; }
   @media only screen and (max-width: 480px) {
-    .protoflio-home {
-      color: black; } }
+    .protoflio-home .shuffle {
+      align-self: center; } }
 
 .nav {
   background-color: #cc5577;
@@ -93,10 +102,6 @@ ul {
     padding-top: 1rem;
     padding-left: 1rem;
     font-size: 2rem; }
-  .autocomplete-box .covid-showroom-info i {
-    color: black; }
   @media only screen and (max-width: 480px) {
     .autocomplete-box .covid-showroom-info p {
-      color: #0f0c0c;
-      padding-top: 1rem;
-      padding-left: 1rem; } }
+      display: none; } }

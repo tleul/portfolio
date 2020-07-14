@@ -4,6 +4,9 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 const Gonavbar = (props) => {
 	return (
 		<>
+		<div  className='nav-bar'>
+
+
 			<Navbar
 				className='nav'
 				sticky='top'
@@ -17,7 +20,7 @@ const Gonavbar = (props) => {
 				<Navbar.Collapse id='responsive-navbar-nav'>
 					<Nav className='mr-auto'>
 						<Nav.Link href='/Titlehome'>
-							<p className='navMenu'>Blogs && Tutorial</p>
+							<p >Blogs && Tutorial</p>
 						</Nav.Link>
 						<Nav.Link
 							onClick={() =>
@@ -26,21 +29,25 @@ const Gonavbar = (props) => {
 								})
 							}>
 							{' '}
-							<p className='navMenu'>Covid19 Realtime</p>
+							<p  >Covid19 Realtime</p>
 						</Nav.Link>
+						<div className='nav-projects'>
+
+					
 						<NavDropdown
+						
 							title='Projects'
 							id='collasible-nav-dropdown'>
 							<NavDropdown.Item href='#action/3.1'>
-								<p className='navMenu'>E-commerce</p>
+								<p >E-commerce</p>
 							</NavDropdown.Item>
 							<NavDropdown.Item href='#action/3.2'>
-								<p className='navMenu'>
+								<p >
 									Full CMS cafe/Restaurant Website
 								</p>
 							</NavDropdown.Item>
 							<NavDropdown.Item href='#action/3.3'>
-								<p className='navMenu'>
+								<p >
 									Virtual Support Assistance
 								</p>
 							</NavDropdown.Item>
@@ -49,15 +56,17 @@ const Gonavbar = (props) => {
 								About Developer
 							</NavDropdown.Item>
 						</NavDropdown>
+						</div>
 					</Nav>
 					<Nav>
-						<Nav.Link href='#deets'>For Foodies</Nav.Link>
+						<Nav.Link href='#deets'><p> For Foodies</p></Nav.Link>
 						<Nav.Link eventKey={2} href='#memes'>
 							Dank memes
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
+			</div>
 		</>
 	);
 };
