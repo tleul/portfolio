@@ -1,12 +1,13 @@
 
 import SkillShuffler from './Titlehome'
-
+import Link from 'next/link'
 
 
 
 const Home = () => {
   return (
       <div className='protoflio-home'>
+        
           <h3>
           Welcome In!!
           <br/>
