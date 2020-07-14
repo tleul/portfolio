@@ -23,6 +23,9 @@
   .main-container .covid-showroom {
     width: 100%;
     margin-left: 2rem; }
+  @media only screen and (max-width: 480px) {
+    .main-container .covid-showroom {
+      display: none; } }
 
 .protoflio-home {
   display: flex;
@@ -92,3 +95,8 @@ ul {
     font-size: 2rem; }
   .autocomplete-box .covid-showroom-info i {
     color: black; }
+  @media only screen and (max-width: 480px) {
+    .autocomplete-box .covid-showroom-info p {
+      color: #0f0c0c;
+      padding-top: 1rem;
+      padding-left: 1rem; } }
