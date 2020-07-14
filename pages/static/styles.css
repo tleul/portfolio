@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap");
 .flash {
   color: red;
   font-weight: bold;
@@ -16,17 +17,34 @@
   100% {
     opacity: 1; } }
 
-.protoflio-home h3 {
-  display: flex;
-  justify-content: center;
-  padding-top: 3rem;
+.nav-bar p {
   color: white;
-  text-align: center;
-  text-justify: center;
-  font-family: 'Asap', sans-serif; }
+  font-weight: bold; }
+
+.nav-projects p {
+  color: #cc5577;
+  font-weight: bold; }
+
+.main-container {
+  display: flex;
+  flex-direction: row; }
+  .main-container .covid-showroom {
+    width: 100%;
+    margin-left: 2rem; }
   @media only screen and (max-width: 480px) {
-    .protoflio-home h3 {
-      color: black; } }
+    .main-container .covid-showroom {
+      display: none; } }
+
+.protoflio-home {
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  .protoflio-home h3 {
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif; }
+  @media only screen and (max-width: 480px) {
+    .protoflio-home .shuffle {
+      align-self: center; } }
 
 .nav {
   background-color: #cc5577;
@@ -66,12 +84,6 @@ ul {
   width: 140px;
   height: 140px; }
 
-.shuffle {
-  padding-left: 15rem; }
-  @media only screen and (max-width: 700px) {
-    .shuffle {
-      padding-left: 1rem; } }
-
 .autocomplete-box {
   display: flex;
   flex-direction: row; }
@@ -85,3 +97,11 @@ ul {
   .autocomplete-box .autocomplete-search button {
     background: none;
     border: none; }
+  .autocomplete-box .covid-showroom-info p {
+    color: #0f0c0c;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    font-size: 2rem; }
+  @media only screen and (max-width: 480px) {
+    .autocomplete-box .covid-showroom-info p {
+      display: none; } }
