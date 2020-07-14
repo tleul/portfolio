@@ -22,12 +22,7 @@ const Gonavbar = (props) => {
 						<Nav.Link href='/Titlehome'>
 							<p >Blogs && Tutorial</p>
 						</Nav.Link>
-						<Nav.Link
-							onClick={() =>
-								Router.push('/Covid', '/covid', {
-									shallow: false,
-								})
-							}>
+						<Nav.Link href='/Covid'>
 							{' '}
 							<p  >Covid19 Realtime</p>
 						</Nav.Link>
