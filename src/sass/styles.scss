@@ -21,17 +21,20 @@
 	}
 }
 
-.protoflio-home h3 {
-    display: flex;
-    justify-content: center;
-	padding-top: 3rem;
-	color: white;
+.protoflio-home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 	text-align: center;
 	text-justify: center;
-	font-family: 'Asap', sans-serif;
+
+	h3 {
+		color: white;
+		font-family: 'Asap', sans-serif;
+	}
 	@media only screen and (max-width: 480px) {
-        color: black;
-        
+		color: black;
 	}
 }
 .nav {
@@ -57,53 +60,49 @@ body {
 }
 ul,
 li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 ul {
-  
-
-  display: flex;
-  width: 300px;
-  flex-wrap: wrap;
+	display: flex;
+	width: 300px;
+	flex-wrap: wrap;
 }
 
-.skill-img  img{
-  border-radius: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-  width: 140px;
-  height: 140px;
+.skill-img img {
+	border-radius: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	width: 140px;
+	height: 140px;
 }
 
+// .shuffle {
+// padding-left: 15rem;
+// @media only screen and (max-width: 700px) {
+//     padding-left: 1rem;
+// }
 
-.shuffle {
-padding-left: 15rem;
-@media only screen and (max-width: 700px) {
-    padding-left: 1rem;
-}
-
-}
-.autocomplete-box{
-    display:flex;
-   flex-direction: row;
-   img:hover{
-       opacity: 0.5;
-   }
-   img{
-       height: 50px
-   }
-   .autocomplete-search{
-       padding-top: 1rem;
-       border: none
-   }
-   .autocomplete-search button {
-    background: none;
-    border: none;
-    
-   }
+// }
+.autocomplete-box {
+	display: flex;
+	flex-direction: row;
+	img:hover {
+		opacity: 0.5;
+	}
+	img {
+		height: 50px;
+	}
+	.autocomplete-search {
+		padding-top: 1rem;
+		border: none;
+	}
+	.autocomplete-search button {
+		background: none;
+		border: none;
+	}
 }
 
 // @media only screen and (max-width: 480px) {
