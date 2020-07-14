@@ -16,16 +16,17 @@
   100% {
     opacity: 1; } }
 
-.protoflio-home h3 {
+.protoflio-home {
   display: flex;
-  justify-content: center;
-  padding-top: 3rem;
-  color: white;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  text-justify: center;
-  font-family: 'Asap', sans-serif; }
+  text-justify: center; }
+  .protoflio-home h3 {
+    color: white;
+    font-family: 'Asap', sans-serif; }
   @media only screen and (max-width: 480px) {
-    .protoflio-home h3 {
+    .protoflio-home {
       color: black; } }
 
 .nav {
@@ -65,12 +66,6 @@ ul {
   margin-right: 10px;
   width: 140px;
   height: 140px; }
-
-.shuffle {
-  padding-left: 15rem; }
-  @media only screen and (max-width: 700px) {
-    .shuffle {
-      padding-left: 1rem; } }
 
 .autocomplete-box {
   display: flex;
