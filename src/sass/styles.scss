@@ -29,6 +29,11 @@
 		width: 100%;
 		margin-left: 2rem;
 	}
+	@media only screen and (max-width: 480px) {
+		.covid-showroom {
+			display: none;
+		}
+	}
 }
 .protoflio-home {
 	display: flex;
@@ -117,6 +122,13 @@ ul {
 	}
 	.covid-showroom-info i {
 		color: black;
+	}
+	@media only screen and (max-width: 480px) {
+		.covid-showroom-info p {
+			color: rgb(15, 12, 12);
+			padding-top: 1rem;
+			padding-left: 1rem;
+		}
 	}
 }
 
