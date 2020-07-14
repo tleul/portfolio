@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 .flash {
 	color: red;
 	font-weight: bold;
@@ -20,18 +21,23 @@
 		opacity: 1;
 	}
 }
+.main-container {
+	display: flex;
+	flex-direction: row;
 
+	.covid-showroom {
+		width: 100%;
+		margin-left: 2rem;
+	}
+}
 .protoflio-home {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-
-	text-align: center;
-	text-justify: center;
 
 	h3 {
 		color: white;
-		font-family: 'Asap', sans-serif;
+
+		font-family: 'Open Sans Condensed', sans-serif;
 	}
 	@media only screen and (max-width: 480px) {
 		color: black;
@@ -102,6 +108,15 @@ ul {
 	.autocomplete-search button {
 		background: none;
 		border: none;
+	}
+	.covid-showroom-info p {
+		color: rgb(15, 12, 12);
+		padding-top: 1rem;
+		padding-left: 1rem;
+		font-size: 2rem;
+	}
+	.covid-showroom-info i {
+		color: black;
 	}
 }
 
