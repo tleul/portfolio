@@ -5,13 +5,12 @@ import { getCovidData } from './../store/actions/index';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const Home = ({ getCovidData, loading }) => {
-	setInterval(() => {
-		getCovidData();
-	}, 30000);
-	useEffect(() => {
-		getCovidData();
-	}, []);
+import Link from 'next/link'
+
+
+
+const Home = () => {
+
 	return (
 		<>
 			<div className='main-container'>
