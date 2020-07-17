@@ -21,19 +21,14 @@
 		opacity: 1;
 	}
 }
-.nav-bar p{
-color:white;
-font-weight: bold;
-
+.nav-bar p {
+	color: white;
+	font-weight: bold;
 }
-.nav-projects p{
-
+.nav-projects p {
 	color: #cc5577;
 	font-weight: bold;
-
-
 }
-
 
 .main-container {
 	display: flex;
@@ -47,8 +42,6 @@ font-weight: bold;
 		.covid-showroom {
 			display: none;
 		}
-		
-		
 	}
 }
 .protoflio-home {
@@ -62,7 +55,6 @@ font-weight: bold;
 		font-family: 'Open Sans Condensed', sans-serif;
 	}
 	@media only screen and (max-width: 480px) {
-	
 		.shuffle {
 			align-self: center;
 		}
@@ -141,12 +133,23 @@ ul {
 		font-size: 2rem;
 	}
 
-	
+	.covid-button {
+		padding-top: 2rem;
+		padding-right: 1rem;
+		padding-left: 2rem;
+	}
+
 	@media only screen and (max-width: 480px) {
 		.covid-showroom-info p {
-		display: none;
+			display: none;
 		}
 	}
+}
+.map-container {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	width: 100%;
 }
 
 // @media only screen and (max-width: 480px) {
