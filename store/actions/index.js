@@ -20,7 +20,7 @@ export const getCovidData = () => async (dispatch) => {
   const totalCases =   res.data.response.sort(function(a, b) {
    return b.cases.total - a.cases.total;
 });
-
+  
  
     dispatch({type: GET_COVID_DATA, payload: totalCases})
     
