@@ -4,7 +4,7 @@ import axios from 'axios';
 import ReactHighmaps from 'react-highcharts/ReactHighmaps.src';
 import ReactDOM from 'react-dom';
 import maps from './mapdata/africa';
-import Navbar from '../Navbar';
+import Navbar from '../../pages/Navbar';
 
 import PropTypes from 'prop-types';
 import { africaMapAnaysis  } from '../../store/actions/index';
@@ -17,7 +17,7 @@ const AfricaMap = ({ africaMapAnaysis , dataAfrica }) => {
 		africaMapAnaysis();
 	}, 3000);
 	useEffect(() => {
-		mapAnalysis();
+		africaMapAnaysis();
 	}, []);
 
 	const levelOne = dataAfrica.filter((cases) => cases.cases.active < 50000);
