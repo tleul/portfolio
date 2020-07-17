@@ -50,6 +50,7 @@ const Covid = ({ loading, getCovidData }) => {
 							<h6 className='toptitle'>
 								Covid19 worldwide Real-Time Stastics
 							</h6>
+
 							<Typist.Delay ms={1250} />
 							<h6 className='toptitle'>
 								Explore each data into actionable insights with
