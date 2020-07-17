@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import TablePagination from '@material-ui/core/TablePagination';
 import { Fade, Loop } from 'react-animation-components';
+import Link from 'next/link';
+import Button from '@material-ui/core/Button';
 //filter tabel
 
 import TextField from '@material-ui/core/TextField';
@@ -208,6 +210,20 @@ const CollapsibleTable = ({
 				</div>
 				<div className='covid-showroom-info'>
 					<p>Covid19 world Realtime Data </p>
+				</div>
+				<div className='covid-button'>
+					<Link href='/countryMap/africa'>
+						<Button variant='outlined' color='primary'>
+							Africa Map Chart
+						</Button>
+					</Link>
+				</div>
+				<div className='covid-button'>
+					<Link href='/'>
+						<Button variant='outlined' color='primary'>
+							World Map Chart
+						</Button>
+					</Link>
 				</div>
 			</div>
 

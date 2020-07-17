@@ -102,6 +102,16 @@ ul {
     padding-top: 1rem;
     padding-left: 1rem;
     font-size: 2rem; }
+  .autocomplete-box .covid-button {
+    padding-top: 2rem;
+    padding-right: 1rem;
+    padding-left: 2rem; }
   @media only screen and (max-width: 480px) {
     .autocomplete-box .covid-showroom-info p {
       display: none; } }
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%; }
