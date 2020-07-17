@@ -1,8 +1,8 @@
 import React from 'react';
-import WorldMap from './worldmap'
+import WorldMap from '../components/countryMap/worldmap'
 
-import Navbar from '../Navbar';
-import Wrapper from './../../components/Wrapper';
+import Navbar from './Navbar';
+import Wrapper from '../components/Wrapper';
 
 const World = () => {
 	return (
@@ -12,7 +12,7 @@ const World = () => {
 				<div>
 					<WorldMap />
 				</div>
-				
+
 			</Wrapper>
 		</div>
 	);

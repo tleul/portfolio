@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux'
 import covidReducer from './covidReducer' 
 import caseByDay from './caseByDay' 
-import mapchart from './mapchart'
+
+import mapAfrica from './mapAfrica'
+
+import mapWorld from './mapWorld'
 
 export default combineReducers({
   covid: covidReducer,
   deathByDay: caseByDay,
-  africa: mapchart
+  africa: mapAfrica,
+  world: mapWorld
 })
