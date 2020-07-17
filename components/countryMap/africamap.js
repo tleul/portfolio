@@ -7,14 +7,14 @@ import maps from './mapdata/africa';
 import Navbar from '../Navbar';
 
 import PropTypes from 'prop-types';
-import { mapAnalysis } from '../../store/actions/index';
+import { africaMapAnaysis  } from '../../store/actions/index';
 import { connect } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import Wrapper from './../../components/Wrapper';
 
-const AfricaMap = ({ mapAnalysis, dataAfrica }) => {
+const AfricaMap = ({ africaMapAnaysis , dataAfrica }) => {
 	setInterval(() => {
-		mapAnalysis();
+		africaMapAnaysis();
 	}, 3000);
 	useEffect(() => {
 		mapAnalysis();
@@ -107,10 +107,10 @@ const AfricaMap = ({ mapAnalysis, dataAfrica }) => {
 AfricaMap.propTypes = {
 	dataAfrica: PropTypes.array,
 	loading: PropTypes.bool.isRequired,
-	mapAnalysis: PropTypes.func.isRequired,
+	africaMapAnaysis : PropTypes.func.isRequired,
 };
 const mapStateToProps = (state) => ({
 	dataAfrica: state.africa.data,
 	loading: state.africa.loading,
 });
-export default connect(mapStateToProps, { mapAnalysis })(AfricaMap);
+export default connect(mapStateToProps, { africaMapAnaysis  })(AfricaMap);
