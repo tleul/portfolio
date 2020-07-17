@@ -212,7 +212,7 @@ const CollapsibleTable = ({
 					<p>Covid19 world Realtime Data </p>
 				</div>
 				<div className='covid-button'>
-					<Link href='/countryMap/africa'>
+					<Link href='/africa'>
 						<Button variant='outlined' color='primary'>
 							Africa Map Chart
 						</Button>
