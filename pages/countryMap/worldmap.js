@@ -3,7 +3,7 @@ import axios from 'axios';
 // Note that HighMaps has to be in the codebase already
 import ReactHighmaps from 'react-highcharts/ReactHighmaps.src';
 import ReactDOM from 'react-dom';
-import maps from './mapdata/africa';
+import maps from './mapdata/world';
 import PropTypes from 'prop-types';
 import { mapAnalysis } from '../../store/actions/index';
 import { connect } from 'react-redux';
