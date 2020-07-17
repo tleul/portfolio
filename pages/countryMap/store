@@ -1,0 +1,150 @@
+// import React from 'react'
+// import  axios from 'axios'
+// // Note that HighMaps has to be in the codebase already
+// const ReactHighmaps = require('react-highcharts/ReactHighmaps.src');
+// const ReactDOM = require('react-dom');
+// const maps = require('./mapdata/africa');
+
+// const CountryMap = (props) =>{
+//     console.log(props.continent)
+// const config = {
+// 	chart       : {
+//         spacingBottom : 20,
+//         backgroundColor:'none',
+        
+// 	},
+// 	title       : {
+// 		text : 'Europe time zones',
+// 	},
+
+// 	legend      : {
+// 		enabled : true,
+// 	},
+// 	setOptions  : {},
+
+// 	plotOptions : {
+// 		map : {
+// 			allAreas   : false,
+// 			joinBy     : [
+// 				'iso-a2',
+// 				'code',
+// 			],
+// 			dataLabels : {
+// 				enabled : true,
+// 				color   : 'white',
+// 				style   : {
+// 					fontWeight : 'bold',
+// 				},
+// 			},
+// 			mapData    : maps,
+// 			tooltip    : {
+// 				headerFormat : '',
+// 				pointFormat  :
+// 					'{point.name}: <b>{series.name}</b>',
+// 			},
+// 		},
+// 	},
+
+// 	series      : [
+// 		{
+// 			color : 'red',
+// 			data  : [
+// 				'UG',
+// 				'NG',
+// 				'ST',
+// 				'TZ',
+// 				'SL',
+// 				'GW',
+// 				'CV',
+// 				'SC',
+// 				'TN',
+// 				'MG',
+// 				'KE',
+// 				'CD',
+// 				'FR',
+// 				'MR',
+// 				'DZ',
+// 				'ER',
+// 				'GQ',
+// 				'MU',
+// 				'SN',
+// 				'KM',
+// 				'ET',
+// 				'CI',
+// 				'GH',
+// 				'ZM',
+// 				'NA',
+// 				'RW',
+// 				'SX',
+// 				'SO',
+// 				'CM',
+// 				'CG',
+// 				'EH',
+// 				'BJ',
+// 				'BF',
+// 				'TG',
+// 				'NE',
+// 				'LY',
+// 				'LR',
+// 				'MW',
+// 				'GM',
+// 				'TD',
+// 				'GA',
+// 				'DJ',
+// 				'BI',
+// 				'AO',
+// 				'GN',
+// 				'ZW',
+// 				'ZA',
+// 				'MZ',
+// 				'SZ',
+// 				'ML',
+// 				'BW',
+// 				'SD',
+// 				'MA',
+// 				'EG',
+// 				'LS',
+// 				'SS',
+// 				'CF',
+// 			].map(function (code){
+// 				return { code: code };
+// 			}),
+// 		},
+// 	],
+// };
+// return(
+// <div>
+//     <h1>
+//         Country Map
+//     </h1>
+//     <div >
+//     <ReactHighmaps config={config} />
+//     </div>
+// </div>
+// )
+// }
+
+// CountryMap.getInitialProps = async (ctx) => {
+    
+//         const config ={
+//           headers:{
+//             "x-rapidapi-host": "covid-193.p.rapidapi.com",
+//             "x-rapidapi-key": "2926cb8831msh5b23fd7bdae7f5ap13fdcejsn2c5175c5b760",
+//             "useQueryString": true,
+//             "Content-Type": "application/json"
+//           }
+//         }
+//         const res = await axios.get("https://covid-193.p.rapidapi.com/statistics", config)
+           
+//       const data = res.data.response
+      
+//      const africa = data.filter((item)=>{
+//         return item.continent === 'Africa'
+//      })
+   
+      
+//     return {continent: africa}
+    
+// }   
+
+// export default CountryMap;

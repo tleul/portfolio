@@ -19,7 +19,7 @@ const Gonavbar = (props) => {
 				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse id='responsive-navbar-nav'>
 					<Nav className='mr-auto'>
-						<Nav.Link href='/Titlehome'>
+						<Nav.Link href='/countryMap/countrymap'>
 							<p >Blogs && Tutorial</p>
 						</Nav.Link>
 						<Nav.Link href='/Covid'>
