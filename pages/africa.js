@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AfricaMap from './countryMap/africamap';
+import AfricaMap from '../components/countryMap/africamap';
 import Navbar from './Navbar';
 import Wrapper from '../components/Wrapper';
 
