@@ -1,23 +1,21 @@
 import React from 'react';
+import WorldMap from './worldmap'
 
-import AfricaMap from './africamap';
 import Navbar from '../Navbar';
 import Wrapper from './../../components/Wrapper';
 
-const Africa = () => {
+const World = () => {
 	return (
-		<Wrapper>
 		<div className='map-container'>
-		
+			<Wrapper>
 				<Navbar />
 				<div>
-					<AfricaMap />
+					<WorldMap />
 				</div>
 				
-			
+			</Wrapper>
 		</div>
-		</Wrapper>
 	);
 };
 
-export default Africa;
+export default World;

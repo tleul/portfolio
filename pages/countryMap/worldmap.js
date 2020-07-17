@@ -7,7 +7,7 @@ import maps from './mapdata/africa';
 import PropTypes from 'prop-types';
 import { mapAnalysis } from '../../store/actions/index';
 import { connect } from 'react-redux';
-const CountryMap = ({ mapAnalysis, dataAfrica }) => {
+const WorldMap = ({ mapAnalysis, dataAfrica }) => {
 	useEffect(() => {
 		mapAnalysis();
 	}, []);
@@ -95,7 +95,7 @@ const CountryMap = ({ mapAnalysis, dataAfrica }) => {
 	);
 };
 
-CountryMap.propTypes = {
+WorldMap.propTypes = {
 	dataAfrica: PropTypes.array,
 	loading: PropTypes.bool.isRequired,
 	mapAnalysis: PropTypes.func.isRequired,
@@ -104,4 +104,4 @@ const mapStateToProps = (state) => ({
 	dataAfrica: state.africa.data,
 	loading: state.africa.loading,
 });
-export default connect(mapStateToProps, { mapAnalysis })(CountryMap);
+export default connect(mapStateToProps, { mapAnalysis })(WorldMap);
