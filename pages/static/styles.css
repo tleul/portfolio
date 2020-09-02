@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap");
+button:focus {
+  outline: none; }
+
 .flash {
   color: red;
   font-weight: bold;
@@ -27,7 +30,8 @@
 
 .main-container {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: center; }
   .main-container .covid-showroom {
     width: 100%;
     margin-left: 2rem; }
@@ -35,10 +39,17 @@
     .main-container .covid-showroom {
       display: none; } }
 
+.aboutme {
+  box-shadow: 0 1rem 8rem 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 2rem; }
+
 .protoflio-home {
   display: flex;
   flex-direction: column;
   text-align: center; }
+  .protoflio-home .shuffle {
+    align-self: center; }
   .protoflio-home h3 {
     color: white;
     font-family: 'Open Sans Condensed', sans-serif; }
@@ -108,7 +119,17 @@ ul {
     padding-left: 2rem; }
   @media only screen and (max-width: 480px) {
     .autocomplete-box .covid-showroom-info p {
-      display: none; } }
+      display: none; }
+    .autocomplete-box .covid-button {
+      padding-top: 1rem;
+      padding-right: 2px;
+      padding-left: 2px; }
+    .autocomplete-box .covid-button p {
+      font-size: x-small;
+      font-weight: bold; }
+    .autocomplete-box .covid-button button {
+      width: 100px;
+      height: 50px; } }
 
 .map-container {
   display: flex;

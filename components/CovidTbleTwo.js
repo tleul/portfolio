@@ -35,6 +35,7 @@ const useRowStyles = makeStyles({
 	root: {
 		'& > *': {
 			borderBottom: 'unset',
+			
 		},
 	},
 });
@@ -48,10 +49,11 @@ const useStyles = makeStyles({
 	},
 });
 
+
 function Row(props) {
 	const { row, processData, loading } = props;
 	const [open, setOpen] = React.useState(false);
-
+	
 	const classes = useRowStyles();
 	const classesPage = useStyles();
 
@@ -96,7 +98,7 @@ function Row(props) {
 						style={
 							!row.cases.new
 								? { color: 'black' }
-								: { color: 'red' }
+								: { color: 'white' }
 						}>
 						{!row.cases.new ? 'NP or 0' : row.cases.new}
 					</span>
@@ -110,7 +112,7 @@ function Row(props) {
 						style={
 							!row.cases.new
 								? { color: 'black' }
-								: { color: 'red' }
+								: { color: 'white' }
 						}>
 						{!row.deaths.new ? 'NP or 0' : row.deaths.new}
 					</span>
@@ -153,7 +155,19 @@ const CollapsibleTable = ({
 	useEffect(() => {
 		getCovidData();
 	}, []);
+	const useTabelStyles = makeStyles({
+		root: {
+			width: '100%',
+			background:'none',
+			boxShadow: '50px 50px 50px 50px none'
 
+	
+		},
+		container: {
+			maxHeight: 440,
+		},
+	});
+	const tabels = useTabelStyles();
 	const [filter, setfilter] = useState(covidData);
 
 	const [page, setPage] = React.useState(0);
@@ -190,7 +204,7 @@ const CollapsibleTable = ({
 						renderInput={(params) => (
 							<TextField
 								{...params}
-								label='Look up Country'
+								label='Country'
 								margin='normal'
 								onChange={() =>
 									handelFilter(params.inputProps.value)
@@ -214,20 +228,20 @@ const CollapsibleTable = ({
 				<div className='covid-button'>
 					<Link href='/africa'>
 						<Button variant='outlined' color='primary'>
-							Africa Map Chart
+						<p>Africa Map Chart</p>	
 						</Button>
 					</Link>
 				</div>
 				<div className='covid-button'>
 					<Link href='/world'>
 						<Button variant='outlined' color='primary'>
-							World Map Chart
+						<p>World Map Chart</p>	
 						</Button>
 					</Link>
 				</div>
 			</div>
 
-			<TableContainer component={Paper}>
+			<TableContainer className={tabels.root} component={Paper}>
 				<Table aria-label='collapsible table'>
 					<TableHead>
 						<TableRow>
