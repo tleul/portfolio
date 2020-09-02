@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import Link from 'next/link';
 import Aboutme from './Aboutme';
-
+import Projects from './Projects';
 const test = './test.gif';
 
 const Home = () => {
@@ -30,8 +30,10 @@ const Home = () => {
 						<hr style={{ borderWidth: 10, borderColor: 'black' }} />
 					</div>
 					<div>
-						<h2 style={{ color: 'black' }}>About Me</h2>
 						<Aboutme />
+					</div>
+					<div>
+						<Projects />
 					</div>
 				</div>
 			</div>

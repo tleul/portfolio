@@ -2,7 +2,24 @@ const Aboutme = () => {
 	return (
 		<>
 			<div className='aboutme'>
-				<h3>
+				<h2>About Me</h2>
+				<img
+					className='desktop-img'
+					width='200'
+					height='200'
+					style={{ float: 'left' }}
+					src='/check.jpg'
+					alt=''
+				/>
+				<img
+					className='mobile-img'
+					width='100'
+					height='100'
+					style={{ float: 'right' }}
+					src='/check.jpg'
+					alt=''
+				/>
+				<p>
 					Hi, I'm Leul a self-taught, design thinking full-stack
 					JavaScript developer with a passion for an Excellent design.
 					I live in San Francisco California. I'm an absolute geek and
@@ -22,7 +39,7 @@ const Aboutme = () => {
 					connecting to MongoDB databases or designing unique user
 					experiences per device whilst still maintaining a consistent
 					brand experience I will bring your ideas to life.
-				</h3>
+				</p>
 			</div>
 		</>
 	);

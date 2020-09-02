@@ -42,7 +42,18 @@ button:focus {
 .aboutme {
   box-shadow: 0 1rem 8rem 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  padding: 2rem; }
+  padding: 1rem; }
+  .aboutme .mobile-img {
+    display: none; }
+  .aboutme h2 {
+    color: black; }
+  @media only screen and (max-width: 480px) {
+    .aboutme .desktop-img {
+      display: none; }
+    .aboutme .mobile-img {
+      display: block; }
+    .aboutme h2 {
+      color: green; } }
 
 .protoflio-home {
   display: flex;
