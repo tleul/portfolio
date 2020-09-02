@@ -20,7 +20,7 @@ const Gonavbar = (props) => {
 							<Nav.Link href='/'>
 								<p>Blogs && Tutorial</p>
 							</Nav.Link>
-							<Nav.Link href='/covid'>
+							<Nav.Link href='/covid19'>
 								{' '}
 								<p>Covid19 Realtime</p>
 							</Nav.Link>
