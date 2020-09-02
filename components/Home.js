@@ -5,31 +5,36 @@ import { getCovidData } from './../store/actions/index';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Link from 'next/link'
-
-
+import Link from 'next/link';
+import Aboutme from './Aboutme';
+import Projects from './Projects';
+const test = './test.gif';
 
 const Home = () => {
-
 	return (
 		<>
 			<div className='main-container'>
 				<div className='protoflio-home'>
 					<div className='top-title'>
 						<h3>
-							Welcome In!!
 							<br />
-							This is Leul, T
-							<br />I am Fullstack software Developer!
+							Leul, T
+							<br />
+							Fullstack Developer!
 						</h3>
+						<hr style={{ borderWidth: 10, borderColor: 'black' }} />
 					</div>
 
 					<div className='shuffle'>
 						<SkillShuffler />
+						<hr style={{ borderWidth: 10, borderColor: 'black' }} />
 					</div>
-				</div>
-				<div className='covid-showroom'>
-					<CovidTbleTwo />
+					<div>
+						<Aboutme />
+					</div>
+					<div>
+						<Projects />
+					</div>
 				</div>
 			</div>
 		</>
