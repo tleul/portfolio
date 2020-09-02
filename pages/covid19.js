@@ -31,6 +31,7 @@ const defaultOptions = {
 	},
 };
 const Covid = ({ loading, getCovidData }) => {
+	console.log('sup')
 	setInterval(() => {
 		getCovidData();
 	}, 30000);
