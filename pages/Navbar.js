@@ -28,14 +28,15 @@ const Gonavbar = (props) => {
 								<NavDropdown
 									title='Projects'
 									id='collasible-nav-dropdown'>
-									<NavDropdown.Item href='#action/3.1'>
+									<NavDropdown.Item href='https://shop.tafachtech.com/'>
 										<p>E-commerce</p>
 									</NavDropdown.Item>
-									<NavDropdown.Item href='#action/3.2'>
+									<NavDropdown.Item href='http://oasiscafe.tafachtech.com/'>
 										<p>Full CMS cafe/Restaurant Website</p>
 									</NavDropdown.Item>
 									<NavDropdown.Item href='#action/3.3'>
-										<p>Virtual Support Assistance</p>
+										<p>Virtual Support Assistance</p>{' '}
+										<p>On----progress</p>
 									</NavDropdown.Item>
 									<NavDropdown.Divider />
 									<NavDropdown.Item href='#action/3.4'>
@@ -45,12 +46,12 @@ const Gonavbar = (props) => {
 							</div>
 						</Nav>
 						<Nav>
-							<Nav.Link href='#deets'>
+							{/* <Nav.Link href='#deets'>
 								<p> For Foodies</p>
 							</Nav.Link>
 							<Nav.Link eventKey={2} href='#memes'>
 								Dank memes
-							</Nav.Link>
+							</Nav.Link> */}
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>

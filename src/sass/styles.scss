@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
 
+
 button:focus {
 	outline: none;
 }
@@ -227,18 +228,38 @@ ul {
 	}
 }
 
-.projects h2 {
-	color: black;
-}
 
-.projects hr {
-	border-color: black;
-	border-width: thick;
-}
+
 
 .projects {
-	.ecommerce {}
+	video :focus {
+		outline: none;
+	}
+
+	.small-video {
+		display: none;
+	}
+
+	@media only screen and (max-width: 480px) {
+		.large-video {
+			display: none;
+		}
+
+		.small-video {
+			display: block;
+		}
+	}
+
+	h2 {
+		color: black;
+	}
+
+	h3 {
+		color: white;
+	}
 }
+
+
 
 .map-container {
 	display: flex;
