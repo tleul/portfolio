@@ -35,7 +35,6 @@ const useRowStyles = makeStyles({
 	root: {
 		'& > *': {
 			borderBottom: 'unset',
-			
 		},
 	},
 });
@@ -49,11 +48,10 @@ const useStyles = makeStyles({
 	},
 });
 
-
 function Row(props) {
 	const { row, processData, loading } = props;
 	const [open, setOpen] = React.useState(false);
-	
+
 	const classes = useRowStyles();
 	const classesPage = useStyles();
 
@@ -158,10 +156,9 @@ const CollapsibleTable = ({
 	const useTabelStyles = makeStyles({
 		root: {
 			width: '100%',
-			background:'none',
-			boxShadow: '50px 50px 50px 50px none'
-
-	
+			background: 'none',
+			boxShadow: '50px 50px 50px 50px none',
+			// focus: 'none',
 		},
 		container: {
 			maxHeight: 440,
@@ -228,14 +225,14 @@ const CollapsibleTable = ({
 				<div className='covid-button'>
 					<Link href='/africa'>
 						<Button variant='outlined' color='primary'>
-						<p>Africa Map Chart</p>	
+							<p>Africa Map Chart</p>
 						</Button>
 					</Link>
 				</div>
 				<div className='covid-button'>
 					<Link href='/world'>
 						<Button variant='outlined' color='primary'>
-						<p>World Map Chart</p>	
+							<p>World Map Chart</p>
 						</Button>
 					</Link>
 				</div>

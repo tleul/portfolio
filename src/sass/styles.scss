@@ -227,6 +227,19 @@ ul {
 	}
 }
 
+.projects h2 {
+	color: black;
+}
+
+.projects hr {
+	border-color: black;
+	border-width: thick;
+}
+
+.projects {
+	.ecommerce {}
+}
+
 .map-container {
 	display: flex;
 	flex-direction: column;
